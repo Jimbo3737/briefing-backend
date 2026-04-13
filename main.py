@@ -26,7 +26,8 @@ app = FastAPI(title="Briefing API", version="1.0.0")
 # ── CORS (allow your frontend origin) ─────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Tighten this to your frontend URL in production
+    allow_origins=["https://briefing-frontend.vercel.app",
+        "http://localhost:3000",],  # Tighten this to your frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
