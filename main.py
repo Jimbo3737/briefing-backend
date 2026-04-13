@@ -97,7 +97,11 @@ class DeliverRequest(BaseModel):
 # ── Health ─────────────────────────────────────────────────────────────────────
 @app.get("/health")
 def health():
-    return {"status": "ok", "time": datetime.utcnow().isoformat()}
+    return {
+        "status": "ok",
+        "time": datetime.utcnow().isoformat(),
+        "redirect_uri": os.getenv("GOOGLE_REDIRECT_URI", "NOT SET"),
+    }
 
 
 # ── Gmail Auth ─────────────────────────────────────────────────────────────────
