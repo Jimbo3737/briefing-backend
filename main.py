@@ -153,11 +153,7 @@ def get_articles(hours: int = 24, max_results: int = 20):
         raise HTTPException(status_code=401, detail="Gmail not connected. Visit /auth/gmail first.")
 
     try:
-        articles = gmail.fetch_newsletters(
-            token,
-            hours=hours,
-            max_results=max_results,
-            label=os.getenv("GMAIL_LABEL"),  # reads your specific folder
+        articles = gmail.fetch_newsletters(token, hours=hours, max_results=max_results),  # reads your specific folder
         )
         # Refresh token if it was updated
         if gmail.last_refreshed_token:
