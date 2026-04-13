@@ -1,0 +1,12 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+python-dotenv==1.0.1
+anthropic==0.23.1
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.125.0
+beautifulsoup4==4.12.3
+sendgrid==6.11.0
+twilio==9.0.4
+apscheduler==3.10.4
+pydantic==2.7.0
